@@ -1,9 +1,10 @@
 import 'package:example/app/modules/home/controller.dart';
-import 'package:example/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ListAnimalsWidget extends GetView<HomeController> {
+  const ListAnimalsWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -13,16 +14,15 @@ class ListAnimalsWidget extends GetView<HomeController> {
                 childAspectRatio: 3 / 4.5,
                 crossAxisSpacing: 16.0,
                 mainAxisSpacing: 16.0),
-            // itemCount: myProducts.length,
             itemCount: controller.state.length,
             itemBuilder: (BuildContext ctx, _) => GestureDetector(
-                onTap: () => Get.toNamed(Routes.ANIMAL_DETAILS,
-                    arguments: controller.state[_]),
+                onTap: () => print('Hello detail'),
                 child: FractionallySizedBox(
                   heightFactor: 1,
                   widthFactor: 1,
                   child: Column(
                     children: [
+                      const Text('Helloooo'),
                       Image.network(
                         controller.state[_].url,
                         loadingBuilder: (BuildContext context, Widget child,
