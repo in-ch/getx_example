@@ -1,4 +1,5 @@
 import 'package:example/app/modules/home/controller.dart';
+import 'package:example/routes/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,13 +17,13 @@ class ListAnimalsWidget extends GetView<HomeController> {
                 mainAxisSpacing: 16.0),
             itemCount: controller.state.length,
             itemBuilder: (BuildContext ctx, _) => GestureDetector(
-                onTap: () => print('Hello detail'),
+                onTap: () =>
+                    Get.toNamed(Routes.detail, arguments: controller.state[_]),
                 child: FractionallySizedBox(
                   heightFactor: 1,
                   widthFactor: 1,
                   child: Column(
                     children: [
-                      const Text('Helloooo'),
                       Image.network(
                         controller.state[_].url,
                         loadingBuilder: (BuildContext context, Widget child,

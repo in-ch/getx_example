@@ -17,7 +17,7 @@ class AnimalDetailsPage extends GetView<AnimalDetailsController> {
           children: [
             Flexible(
                 child: PhotoView(
-                    backgroundDecoration: BoxDecoration(color: bg_color),
+                    backgroundDecoration: const BoxDecoration(color: bg_color),
                     imageProvider: NetworkImage(controller.animal.value.url!))),
             Padding(
               padding: const EdgeInsets.all(8.0),
